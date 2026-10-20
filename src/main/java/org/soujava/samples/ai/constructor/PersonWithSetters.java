@@ -19,28 +19,28 @@ public final class PersonWithSetters {
         setBirthday(birthday);
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Name is required");
         }
         this.name = name;
     }
 
-    public void setSurname(String surname) {
+    void setSurname(String surname) {
         if (surname == null || surname.isBlank()) {
             throw new IllegalArgumentException("Surname is required");
         }
         this.surname = surname;
     }
 
-    public void setCity(String city) {
+     void setCity(String city) {
         if (city == null || city.isBlank()) {
             throw new IllegalArgumentException("City is required");
         }
         this.city = city;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    void setBirthday(LocalDate birthday) {
         Objects.requireNonNull(birthday, "Birthday is required");
 
         LocalDate today = LocalDate.now();
