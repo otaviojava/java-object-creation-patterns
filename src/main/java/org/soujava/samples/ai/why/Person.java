@@ -14,7 +14,7 @@ public class Person {
 
     /**
      *
-     * @deprecated  avoid use the default constructor, use the xxx instead, only for frameworks that require a default constructor
+     * Avoid use the default constructor, use the xxx instead, only for frameworks that require a default constructor
      */
     Person() {
     }
