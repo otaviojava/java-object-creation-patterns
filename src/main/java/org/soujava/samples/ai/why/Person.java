@@ -12,4 +12,10 @@ class Person {
 
     private LocalDate birthday;
 
+    /**
+     *
+     * @deprecated  avoid use the default constructor, use the xxx instead, only for frameworks that require a default constructor
+     */
+    Person() {
+    }
 }
