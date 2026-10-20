@@ -2,7 +2,7 @@ package org.soujava.samples.ai.why;
 
 import java.time.LocalDate;
 
-class Person {
+public class Person {
 
     private String name;
 
