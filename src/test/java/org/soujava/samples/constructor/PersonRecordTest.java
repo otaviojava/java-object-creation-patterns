@@ -1,4 +1,4 @@
-package org.soujava.samples.ai.constructor;
+package org.soujava.samples.constructor;
 
 
 import org.junit.jupiter.api.DisplayName;
