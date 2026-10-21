@@ -14,8 +14,8 @@ public final class Order {
     private final UUID id;
     private final UUID customerId;
     private final List<OrderItem> items;
-    private final Money total;
-    private final Status status;
+    private Money total;
+    private Status status;
 
     Order(UUID id, UUID customerId,
           List<OrderItem> items, Money total,
@@ -46,5 +46,30 @@ public final class Order {
 
     public Status status() {
         return status;
+    }
+
+    public void addItem(
+            UUID productId,
+            int quantity,
+            Money unitPrice) {
+
+        if (status != Status.CREATED) {
+            throw new IllegalStateException(
+                    "Cannot add items to a confirmed order");
+        }
+
+        OrderItem item = new OrderItem(
+                productId,
+                quantity,
+                unitPrice
+        );
+
+        if (!total.currency().equals(unitPrice.currency())) {
+            throw new IllegalArgumentException(
+                    "All items must use the same currency");
+        }
+
+        items.add(item);
+        total = total.add(item.subtotal());
     }
 }
