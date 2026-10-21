@@ -1,6 +1,7 @@
 package org.soujava.samples.ddd;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
@@ -23,7 +24,7 @@ public final class Order {
 
         this.id = Objects.requireNonNull(id);
         this.customerId = Objects.requireNonNull(customerId);
-        this.items = List.copyOf(items);
+        this.items = new ArrayList<>(Objects.requireNonNull(items));
         this.total = Objects.requireNonNull(total);
         this.status = Objects.requireNonNull(status);
     }
