@@ -34,4 +34,8 @@ public final class Person {
     public LocalDate birthday() {
         return birthday;
     }
+
+    public static PersonBuilder builder() {
+        return new PersonBuilder();
+    }
 }
