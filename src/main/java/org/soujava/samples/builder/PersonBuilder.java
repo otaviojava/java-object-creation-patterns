@@ -11,6 +11,9 @@ public final class PersonBuilder {
     private String city;
     private LocalDate birthday;
 
+    PersonBuilder() {
+    }
+
     public PersonBuilder name(String name) {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Name is required");
