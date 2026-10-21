@@ -142,7 +142,7 @@ class OrderTest {
             assertThatIllegalArgumentException()
                     .isThrownBy(() -> order.addItem(
                             UUID.randomUUID(), 1, unitPrice))
-                    .withMessage("Cannot add different currencies");
+                    .withMessage("All items must use the same currency");
         }
 
         @Test
