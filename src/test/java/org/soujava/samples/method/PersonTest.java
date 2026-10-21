@@ -30,7 +30,7 @@ class PersonTest {
         @DisplayName("Should create a person with valid attributes")
         void shouldCreate() {
             // When
-            var person = Person.of(
+            var person = Person.register(
                     NAME, SURNAME, CITY, BIRTHDAY);
 
             // Then
@@ -46,7 +46,7 @@ class PersonTest {
             var birthday = LocalDate.now().minusYears(200);
 
             // When
-            var person = Person.of(
+            var person = Person.register(
                     NAME, SURNAME, CITY, birthday);
 
             // Then
@@ -62,7 +62,7 @@ class PersonTest {
             var birthday = LocalDate.now();
 
             // When
-            var person = Person.of(
+            var person = Person.register(
                     NAME, SURNAME, CITY, birthday);
 
             // Then
@@ -84,7 +84,7 @@ class PersonTest {
             // Then
             assertThatIllegalArgumentException()
                     .as("invalid name is rejected")
-                    .isThrownBy(() -> Person.of(
+                    .isThrownBy(() -> Person.register(
                             name, SURNAME, CITY, BIRTHDAY))
                     .withMessage("Name is required");
         }
@@ -97,7 +97,7 @@ class PersonTest {
             // Then
             assertThatIllegalArgumentException()
                     .as("invalid surname is rejected")
-                    .isThrownBy(() -> Person.of(
+                    .isThrownBy(() -> Person.register(
                             NAME, surname, CITY, BIRTHDAY))
                     .withMessage("Surname is required");
         }
@@ -110,7 +110,7 @@ class PersonTest {
             // Then
             assertThatIllegalArgumentException()
                     .as("invalid city is rejected")
-                    .isThrownBy(() -> Person.of(
+                    .isThrownBy(() -> Person.register(
                             NAME, SURNAME, city, BIRTHDAY))
                     .withMessage("City is required");
         }
@@ -121,7 +121,7 @@ class PersonTest {
             // Then
             assertThatNullPointerException()
                     .as("null birthday is rejected")
-                    .isThrownBy(() -> Person.of(
+                    .isThrownBy(() -> Person.register(
                             NAME, SURNAME, CITY, null))
                     .withMessage("Birthday is required");
         }
@@ -135,7 +135,7 @@ class PersonTest {
             // Then
             assertThatIllegalArgumentException()
                     .as("future birthday is rejected")
-                    .isThrownBy(() -> Person.of(
+                    .isThrownBy(() -> Person.register(
                             NAME, SURNAME, CITY, birthday))
                     .withMessage("Birthday cannot be in the future");
         }
@@ -151,7 +151,7 @@ class PersonTest {
             // Then
             assertThatIllegalArgumentException()
                     .as("age greater than 200 years is rejected")
-                    .isThrownBy(() -> Person.of(
+                    .isThrownBy(() -> Person.register(
                             NAME, SURNAME, CITY, birthday))
                     .withMessage(
                             "A person cannot be older than 200 years");

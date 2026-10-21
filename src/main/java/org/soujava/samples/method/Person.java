@@ -18,8 +18,8 @@ public final class Person {
         this.birthday = birthday;
     }
 
-    public static Person of(String name, String surname,
-                            String city, LocalDate birthday) {
+    public static Person register(String name, String surname,
+                                  String city, LocalDate birthday) {
 
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Name is required");
