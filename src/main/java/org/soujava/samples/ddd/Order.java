@@ -56,7 +56,7 @@ public final class Order {
 
         if (status != Status.CREATED) {
             throw new IllegalStateException(
-                    "Cannot add items to a confirmed order");
+                    "Items can only be added to orders in CREATED status");
         }
 
         OrderItem item = new OrderItem(
