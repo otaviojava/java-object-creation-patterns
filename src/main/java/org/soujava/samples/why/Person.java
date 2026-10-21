@@ -1,4 +1,4 @@
-package org.soujava.samples.ai.why;
+package org.soujava.samples.why;
 
 import java.time.LocalDate;
 
