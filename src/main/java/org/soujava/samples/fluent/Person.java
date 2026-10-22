@@ -18,6 +18,22 @@ public final class Person {
         this.birthday = Objects.requireNonNull(birthday);
     }
 
+    public String name() {
+        return name;
+    }
+
+    public String surname() {
+        return surname;
+    }
+
+    public String city() {
+        return city;
+    }
+
+    public LocalDate birthday() {
+        return birthday;
+    }
+
     public static SurnameStep name(String name) {
         return surname -> city -> birthday ->
                 new Person(name, surname, city, birthday);
