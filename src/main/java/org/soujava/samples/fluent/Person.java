@@ -10,7 +10,7 @@ public final class Person {
     private final String city;
     private final LocalDate birthday;
 
-    private Person(String name, String surname,
+    Person(String name, String surname,
                    String city, LocalDate birthday) {
         this.name = Objects.requireNonNull(name);
         this.surname = Objects.requireNonNull(surname);
