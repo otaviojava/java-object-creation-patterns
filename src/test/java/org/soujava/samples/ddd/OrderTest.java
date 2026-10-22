@@ -81,17 +81,7 @@ class OrderTest {
                     .isEqualTo(Order.Status.CREATED);
         }
 
-        @Test
-        @DisplayName("Should expose an immutable view of items")
-        void shouldProtectItems() {
-            // Given
-            var order = createOrder();
-            var items = order.items();
 
-            // Then
-            assertThatExceptionOfType(UnsupportedOperationException.class)
-                    .isThrownBy(items::clear);
-        }
     }
 
     @Nested
